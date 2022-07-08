@@ -15,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
 import { TwainComponent } from './twain/twain.component';
 import { TwainService } from './twain/twain.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { GoogleTagManagerModule } from "angular-google-tag-manager";
 
 @NgModule({
   imports: [
@@ -23,6 +24,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
+    GoogleTagManagerModule.forRoot({
+      id: 'test-id',
+    }),
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
   ],
   providers: [HeroService, TwainService, UserService],
